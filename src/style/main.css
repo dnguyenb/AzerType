@@ -1,0 +1,28 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mise en forme des titres */
+h1 {
+    margin: 10px;
+    font-size: 3.75rem;
+    font-weight: 900;
+    color: #f76c5e;
+}
+
+h2 {
+    margin: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #f68e5f;
+}
+
+h3 {
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f68e5f;
+}
