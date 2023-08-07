@@ -1,27 +1,41 @@
+// Déclaration des tableaux contenant les listes des mots proposés à l'utilisateur :
 const listeMots = ['Cachalot', 'Pétunia', 'Serviette'];
+const listePhrases = [
+	'Pas de panique !',
+	'La vie, l’univers et le reste',
+	'Merci pour le poisson',
+];
+
+// déclaration de la variable 'score' initialisée à 0 :
 let score = 0;
 
-let motUtilisateur = prompt('Entrez le mot : ' + listeMots[0]);
-if (motUtilisateur === listeMots[0]) {
-	alert('Bravo connard !');
-	score++;
-} else {
-	alert('Va falloir retourner en cm1 !');
+// déclaration de la variable choix de jeu de l'utilisateur :
+let choixUtilisateur = prompt(
+	"Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
+);
+
+// Tant que l'utilisateur n'a pas saisi "mots" ou "phrases", on lui redemande de saisir un choix :
+while (choixUtilisateur !== 'mots' && choixUtilisateur !== 'phrases') {
+	choixUtilisateur = prompt(
+		"Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
+	);
 }
 
-motUtilisateur = prompt('Entrez le mot : ' + listeMots[1]);
-if (motUtilisateur === listeMots[1]) {
-	alert('Bravo connard !');
-	score++;
+// boucle sur les tableaux en fonction du choix utilisateur :
+if (choixUtilisateur === 'mots') {
+	for (let i = 0; i < listeMots.length; i++) {
+		let motUtilisateur = prompt(`Entrez le mot : ${listeMots[i]}`);
+		if (motUtilisateur === listeMots[i]) {
+			score++;
+		}
+	}
+	alert(`Ton score est de ${score}/${listeMots.length}`);
 } else {
-	alert("T'as fait l'école des golmons ?");
+	for (let i = 0; i < listePhrases.length; i++) {
+		let motUtilisateur = prompt(`Entrez la phrase : ${listePhrases[i]}`);
+		if (motUtilisateur === listePhrases[i]) {
+			score++;
+		}
+	}
+	alert(`Ton score est de ${score}/${listePhrases.length}`);
 }
-
-motUtilisateur = prompt('Entrez le mot : ' + listeMots[2]);
-if (motUtilisateur === listeMots[2]) {
-	alert('Bravo connard !');
-	score++;
-} else {
-	alert('Pfff irrécupérable... !');
-}
-alert('Ton score est de ' + score);
