@@ -5,6 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../src/style/main.css" />
 		<title>AzerType</title>
+
+		<script src="../src/js/config.js" defer></script>
+		<script src="../src/js/script.js" defer></script>
+		<script src="../src/js/main.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -15,11 +19,34 @@
 				au clavier :)
 			</h3>
 		</header>
-		<main></main>
-		<footer></footer>
 
-		<script src="../src/js/config.js"></script>
-		<script src="../src/js/script.js"></script>
-		<script src="../src/js/main.js"/></script>
+		<main>
+			<div class="zoneOptions">
+				<p>
+					Choisissez votre option et tapez la proposition qui s'affiche dans le
+					champ en-dessous.
+				</p>
+				<div class="optionSource">
+					<input type="radio" name="optionSource" id="mots" value="1" checked />
+					<label for="mots">Mots</label>
+					<input type="radio" name="optionSource" id="phrases" value="2" />
+					<label for="phrases">Phrases</label>
+				</div>
+			</div>
+
+			<div class="zoneProposition">Azerty</div>
+
+			<div class="zoneSaisie">
+				<input type="text" id="inputEcriture" name="inputEcriture" />
+				<button id="btnValiderMot">Valider</button>
+			</div>
+
+			<div class="zoneScore">Votre score : <span>0</span></div>
+
+			<div class="zonePartage">
+				<button>Partager</button>
+			</div>
+		</main>
+		<footer></footer>
 	</body>
 </html>
