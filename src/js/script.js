@@ -1,41 +1,50 @@
-// Déclaration des tableaux contenant les listes des mots proposés à l'utilisateur :
-const listeMots = ['Cachalot', 'Pétunia', 'Serviette'];
-const listePhrases = [
-	'Pas de panique !',
-	'La vie, l’univers et le reste',
-	'Merci pour le poisson',
-];
-
-// déclaration de la variable 'score' initialisée à 0 :
-let score = 0;
-
-// déclaration de la variable choix de jeu de l'utilisateur :
-let choixUtilisateur = prompt(
-	"Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
-);
-
-// Tant que l'utilisateur n'a pas saisi "mots" ou "phrases", on lui redemande de saisir un choix :
-while (choixUtilisateur !== 'mots' && choixUtilisateur !== 'phrases') {
-	choixUtilisateur = prompt(
-		"Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
-	);
+// fonctions :
+function afficherResultat(score, nombreMotsProposes) {
+	alert(`Ton score est de ${score}/${nombreMotsProposes}`);
 }
 
-// boucle sur les tableaux en fonction du choix utilisateur :
-if (choixUtilisateur === 'mots') {
-	for (let i = 0; i < listeMots.length; i++) {
-		let motUtilisateur = prompt(`Entrez le mot : ${listeMots[i]}`);
-		if (motUtilisateur === listeMots[i]) {
+function choisirPhrasesOuMots() {
+	// déclaration de la variable choix de jeu de l'utilisateur :
+	let choix = prompt(
+		"Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
+	);
+	// Tant que l'utilisateur n'a pas saisi "mots" ou "phrases", on lui redemande de saisir un choix :
+	while (choix !== 'mots' && choix !== 'phrases') {
+		choix = prompt(
+			"Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
+		);
+	}
+	return choix;
+}
+
+function lancerBoucleDeJeu(listePropositions) {
+	let score = 0;
+	// boucle sur les tableaux en fonction du choix utilisateur :
+	for (let i = 0; i < listePropositions.length; i++) {
+		let motUtilisateur = prompt(`Entrez le mot : ${listePropositions[i]}`);
+		if (motUtilisateur === listePropositions[i]) {
 			score++;
 		}
 	}
-	alert(`Ton score est de ${score}/${listeMots.length}`);
-} else {
-	for (let i = 0; i < listePhrases.length; i++) {
-		let motUtilisateur = prompt(`Entrez la phrase : ${listePhrases[i]}`);
-		if (motUtilisateur === listePhrases[i]) {
-			score++;
-		}
+
+	return score;
+}
+
+function lancerJeu() {
+	// on demande d'abord à l'utilisateur de choisir avec quelle liste il veut jouer :
+	let choix = choisirPhrasesOuMots();
+	// déclaration des variables 'score' et 'nombreMotsProposes initialisées à 0 :
+	let score = 0;
+	let nombreMotsProposes = 0;
+
+	if (choix === 'mots') {
+		//la variable 'score' prend la valeur retournée par la fonction "lancerBoucleDeJeu" :
+		score = lancerBoucleDeJeu(listeMots);
+		nombreMotsProposes = listeMots.length;
+	} else {
+		score = lancerBoucleDeJeu(listePhrases);
+		nombreMotsProposes = listePhrases.length;
 	}
-	alert(`Ton score est de ${score}/${listePhrases.length}`);
+
+	afficherResultat(score, nombreMotsProposes);
 }
