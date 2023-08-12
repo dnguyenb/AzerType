@@ -1,5 +1,5 @@
 // appel de la fonction pour lancer le jeu :
-// lancerJeu();
+lancerJeu();
 
 // let inputEcriture = document.getElementById('inputEcriture');
 // let btnValiderMot = document.getElementById('btnValiderMot');
