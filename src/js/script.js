@@ -1,4 +1,3 @@
-// fonctions :
 const afficherResultat = (score, nombreMotsProposes) => {
 	// Récupération de la zone dans laquelle on va écrire le score
 	let spanScore = document.querySelector('.zoneScore span');
@@ -32,11 +31,11 @@ const lancerJeu = () => {
 		i++; // passe au mot suivant.
 		afficherResultat(score, i);
 
-		inputEcriture.value = '';// permet de vider le champs à chaque fois que l'on vzlide.
+		inputEcriture.value = ''; // permet de vider le champs à chaque fois que l'on vzlide.
 
 		if (listeMots[i] === undefined) {
 			afficherProposition('Le jeu est fini');
-			btnValiderMot.disabled = true;// désactive le bouton "valider".
+			btnValiderMot.disabled = true; // désactive le bouton "valider".
 		} else {
 			afficherProposition(listeMots[i]); // affiche le mot suivant à chaque click.
 		}
