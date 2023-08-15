@@ -1,0 +1,27 @@
+{
+	"name": "azertype",
+	"version": "1.0.0",
+	"description": "application de jeu",
+	"main": "index.js",
+	"directories": {
+		"doc": "docs"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"scss": "node-sass -watch scss -o css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dnguyenb/AzerType.git"
+	},
+	"author": "David Nguyen Blot",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/dnguyenb/AzerType/issues"
+	},
+	"homepage": "https://github.com/dnguyenb/AzerType#readme",
+	"dependencies": {
+		"node-sass": "^9.0.0",
+		"sass": "^1.65.1"
+	}
+}

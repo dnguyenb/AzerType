@@ -1,0 +1,30 @@
+/* Mise en forme des formulaires */
+input[type='radio'] {
+    filter: grayscale(1);
+    /* Grayscale passe le bouton en niveau de gris */
+    display: flex;
+    justify-content: space-around;
+}
+
+.optionSource {
+    margin: 2rem;
+}
+
+input[type='text'],
+input[type='email'] {
+    width: 100%;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    font-size: 17px;
+    color: $color-primary;
+}
+
+input[type='text']::placeholder,
+input[type='email']::placeholder {
+    color: $color-secondary;
+    opacity: 50%;
+}

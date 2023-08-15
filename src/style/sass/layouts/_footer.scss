@@ -1,0 +1,15 @@
+footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 30px;
+    font-weight: 600;
+    font-size: 17px;
+    color: white;
+    background-color: $color-secondary;
+}
+
+footer div:hover {
+    border-bottom: 2px $color-tertiary solid;
+}

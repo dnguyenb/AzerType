@@ -1,0 +1,15 @@
+/* BASE */
+@import "../sass/base/normalize";
+@import "../sass/base/reset";
+@import "../sass/base/variables";
+
+/* LAYOUT */
+@import "../sass/layouts/header";
+@import "../sass/layouts/footer";
+
+/* COMPONENTS */
+@import "../sass/components/button";
+@import "../sass/components/input";
+
+/* PAGES */
+@import "../sass/pages/game";
