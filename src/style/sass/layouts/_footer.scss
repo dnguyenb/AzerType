@@ -2,7 +2,9 @@ footer {
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
+    height: 1rem;
     padding: 30px;
     font-weight: 600;
     font-size: 17px;
@@ -10,6 +12,6 @@ footer {
     background-color: $color-secondary;
 }
 
-footer div:hover {
+.footer-link:hover {
     border-bottom: 2px $color-tertiary solid;
 }

@@ -2,12 +2,10 @@
 input[type='radio'] {
     filter: grayscale(1);
     /* Grayscale passe le bouton en niveau de gris */
-    display: flex;
-    justify-content: space-around;
 }
 
 .optionSource {
-    margin: 2rem;
+    margin: 1rem;
 }
 
 input[type='text'],
@@ -27,4 +25,41 @@ input[type='text']::placeholder,
 input[type='email']::placeholder {
     color: $color-secondary;
     opacity: 50%;
+}
+
+.optionSource input[type='radio']:not(:first-child) {
+    margin-left: 20px;
+}
+
+/* Zone ou sera affiché le texte (mot ou phrase) à afficher */
+.zoneProposition {
+    width: 80%;
+    margin: 0.8rem 0;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    background-color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-primary;
+}
+
+/* Zone de saisie */
+.zoneSaisie {
+    // display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Eléments du formulaire de saisie */
+.zoneSaisie input[type='text'] {
+    width: 80%;
+}
+
+.zoneScore {
+    font-size: 1.1rem;
+}
+
+.zonePartage {
+    width: 100%;
 }

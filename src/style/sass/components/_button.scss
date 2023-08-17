@@ -1,22 +1,21 @@
 button {
-    padding: 5px;
+    padding: 1rem;
     border: none;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 17px;
     color: $color-secondary;
-    background-color: white;
+    background-color: $color-tertiary;
+    margin: 0.5rem 0;
+    height: 1rem;
+    width: 45%;
 
     &:hover {
-        color: $color-primary;
-        background-color: $color-tertiary;
+        color: $color-tertiary;
+        background-color: $color-secondary;
         cursor: pointer;
     }
 
     &:focus {
-        background-color: $color-tertiary;
         border: 3px solid $color-primary;
-        padding: 2px;
-
     }
 }
