@@ -1,8 +1,5 @@
 button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    @include flex;
     padding: 1rem;
     border: none;
     border-radius: 8px;
@@ -22,20 +19,19 @@ button {
     &:focus {
         border: 3px solid $color-primary;
     }
-}
 
-@media only screen and (min-width: 768px) {
-    button {
+    @media screen and (min-width: 768px) {
         width: 30%;
     }
+}
 
-    #btnValiderMot,
-    #btnPartager {
-        padding: 0.8rem;
-        border-radius: 0.8rem;
-    }
 
-    #btnPartager {
-        width: 25%;
-    }
+#btnValiderMot,
+#btnPartager {
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+}
+
+#btnPartager {
+    width: 25%;
 }

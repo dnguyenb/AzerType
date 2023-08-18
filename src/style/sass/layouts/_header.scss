@@ -1,7 +1,5 @@
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex;
     text-align: center;
     width: 100%;
 }
@@ -31,7 +29,7 @@ h3 {
     font-size: 0.9rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
     h1 {
         font-size: 3rem;
     }

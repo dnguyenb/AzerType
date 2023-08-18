@@ -4,9 +4,6 @@ input[type='radio'] {
     /* Grayscale passe le bouton en niveau de gris */
 }
 
-.optionSource {
-    margin: 1rem;
-}
 
 input[type='text'],
 input[type='email'] {
@@ -15,9 +12,7 @@ input[type='email'] {
     padding: 5px;
     border: none;
     border-radius: 8px;
-    font-size: 17px;
     font-weight: 600;
-    font-size: 17px;
     color: $color-primary;
 }
 
@@ -25,58 +20,4 @@ input[type='text']::placeholder,
 input[type='email']::placeholder {
     color: $color-secondary;
     opacity: 50%;
-}
-
-.optionSource input[type='radio']:not(:first-child) {
-    margin-left: 20px;
-}
-
-/* Zone ou sera affiché le texte (mot ou phrase) à afficher */
-.zoneProposition {
-    width: 80%;
-    margin: 0.8rem 0;
-    padding: 0.8rem;
-    border-radius: 1rem;
-    background-color: white;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: $color-primary;
-}
-
-/* Zone de saisie */
-.zoneSaisie {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    margin-bottom: 1rem;
-}
-
-@media only screen and (min-width: 768px) {
-    .zoneSaisie {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-}
-/* Eléments du formulaire de saisie */
-.zoneSaisie input[type='text'] {
-    width: 80%;
-    padding: 0.8rem;
-    border-radius: 1rem;
-    margin: 0.8rem 0;
-}
-
-.zoneScore {
-    font-size: 1.3rem;
-}
-
-.zonePartage {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-}
-
-.btnPartager a {
-    color: $color-secondary;
 }
