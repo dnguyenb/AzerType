@@ -362,7 +362,7 @@ header {
 /* mise en forme des titres */
 h1 {
   margin: 10px;
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #f76c5e;
 }
@@ -380,8 +380,20 @@ h3 {
   margin: 10px;
   font-weight: 500;
   color: #f68e5f;
+  font-size: 0.9rem;
 }
 
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
 footer {
   margin-top: 20px;
   display: flex;
@@ -402,6 +414,10 @@ footer {
 
 /* COMPONENTS */
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   padding: 1rem;
   border: none;
   border-radius: 8px;
@@ -409,8 +425,8 @@ button {
   color: #f68e5f;
   background-color: #fff;
   margin: 0.5rem 0;
-  height: 1rem;
-  width: 45%;
+  min-width: 25%;
+  max-width: 45%;
 }
 button:hover {
   color: #fff;
@@ -421,6 +437,19 @@ button:focus {
   border: 3px solid #f76c5e;
 }
 
+@media only screen and (min-width: 768px) {
+  button {
+    width: 30%;
+  }
+  #btnValiderMot,
+  #btnPartager {
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+  }
+  #btnPartager {
+    width: 25%;
+  }
+}
 /* Mise en forme des formulaires */
 input[type=radio] {
   filter: grayscale(1);
@@ -466,29 +495,47 @@ input[type=email]::placeholder {
   padding: 0.8rem;
   border-radius: 1rem;
   background-color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #f76c5e;
 }
 
 /* Zone de saisie */
 .zoneSaisie {
-  justify-content: space-between;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
   margin-bottom: 1rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .zoneSaisie {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
 /* Eléments du formulaire de saisie */
 .zoneSaisie input[type=text] {
   width: 80%;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  margin: 0.8rem 0;
 }
 
 .zoneScore {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .zonePartage {
-  width: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.btnPartager a {
+  color: #f68e5f;
 }
 
 /* PAGES */
@@ -513,6 +560,6 @@ main {
   color: #fff;
   background-color: #f68e5f;
   border-radius: 15px;
-  padding: 3rem;
+  padding: 1rem;
   margin-inline: 0.8rem;
 }/*# sourceMappingURL=main.css.map */

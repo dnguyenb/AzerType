@@ -9,7 +9,7 @@ header {
 /* mise en forme des titres */
 h1 {
     margin: 10px;
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 900;
     color: $color-primary;
 
@@ -28,4 +28,19 @@ h3 {
     margin: 10px;
     font-weight: 500;
     color: $color-secondary;
+    font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
 }
