@@ -1,19 +1,22 @@
 button {
     @include flex;
     padding: 1rem;
-    border: none;
+    border: 3px solid transparent;
     border-radius: 8px;
     font-weight: 600;
-    color: $color-secondary;
+    color: $color-primary;
     background-color: $color-tertiary;
     margin: 0.5rem 0;
     min-width: 25%;
     max-width: 45%;
+    transition: all 0.3s;
 
     &:hover {
         color: $color-tertiary;
         background-color: $color-secondary;
         cursor: pointer;
+        box-shadow: 0 4px 8px;
+        border: 3px solid $color-tertiary;
     }
 
     &:focus {

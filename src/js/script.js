@@ -47,13 +47,14 @@ const lancerJeu = () => {
 
 	for (let i = 0; i < listeBtnRadio.length; i++) {
 		listeBtnRadio[i].addEventListener('change', () => {
-			if (listeBtnRadio[i].value === '1') {
+			if (listeBtnRadio[i].value === 'mots') {
 				listeProposition = listeMots;
 			} else {
 				listeProposition = listePhrases;
 			}
 			// Modifie l'affichage :
 			afficherProposition(listeProposition[i]);
+			console.log(listeBtnRadio[i].value);
 		});
 	}
 	afficherResultat(score, i);

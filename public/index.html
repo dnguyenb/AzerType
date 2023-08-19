@@ -27,9 +27,20 @@
 					champs en-dessous.
 				</p>
 				<div class="optionSource">
-					<input type="radio" name="optionSource" id="mots" value="1" checked />
+					<input
+						type="radio"
+						name="optionSource"
+						id="mots"
+						value="mots"
+						checked
+					/>
 					<label for="mots">Mots</label>
-					<input type="radio" name="optionSource" id="phrases" value="2" />
+					<input
+						type="radio"
+						name="optionSource"
+						id="phrases"
+						value="phrases"
+					/>
 					<label for="phrases">Phrases</label>
 				</div>
 			</div>
@@ -37,16 +48,19 @@
 			<div class="zoneProposition">exemple</div>
 
 			<div class="zoneSaisie">
-				<input type="text" id="inputEcriture" name="inputEcriture" autofocus />
+				<input
+					type="text"
+					id="inputEcriture"
+					name="inputEcriture"
+					placeholder="Ecrivez ici"
+				/>
 				<button id="btnValiderMot">Valider</button>
 			</div>
 
 			<div class="zoneScore">Votre score : <span>0</span></div>
 
 			<div class="zonePartage">
-				<button id="btnPartager">
-					Partager
-				</button>
+				<button id="btnPartager">Partager</button>
 			</div>
 		</main>
 		<footer>
@@ -57,5 +71,24 @@
 				<a href="#">Contact</a>
 			</div>
 		</footer>
+
+		<!-- Popup de partage -->
+		<div class="popupBackground">
+			<div class="popup">
+				<div>Partagez votre score</div>
+				<form>
+					<label for="nom">Votre nom</label>
+					<input type="text" id="nom" name="nom" placeholder="Votre nom" />
+					<label for="email">Avec qui voulez-vous partager votre score ?</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="nom@domaine.com"
+					/>
+					<button id="btnEnvoyerMail">Envoyer</button>
+				</form>
+			</div>
+		</div>
 	</body>
 </html>

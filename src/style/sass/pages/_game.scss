@@ -5,6 +5,7 @@ body {
     min-width: 325px;
     scroll-behavior: smooth;
     text-align: center;
+    font-family: $font, sans-serif;
 }
 
 main {
@@ -14,7 +15,7 @@ main {
     background-color: $color-secondary;
     border-radius: 15px;
     padding: 1rem;
-    margin-inline: 0.8rem;
+    margin: 1rem 0.8rem;
 }
 
 .optionSource {
@@ -54,12 +55,7 @@ main {
 }
 
 /* Eléments du formulaire de saisie */
-.zoneSaisie>input {
-    width: 80%;
-    padding: 0.8rem;
-    border-radius: 1rem;
-    margin: 0.8rem 0;
-}
+
 
 .zoneScore {
     font-size: 1.3rem;

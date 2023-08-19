@@ -4,20 +4,22 @@ input[type='radio'] {
     /* Grayscale passe le bouton en niveau de gris */
 }
 
-
 input[type='text'],
 input[type='email'] {
-    width: 100%;
-    margin: 10px;
     padding: 5px;
     border: none;
-    border-radius: 8px;
+    font-size: 17px;
     font-weight: 600;
-    color: $color-primary;
+    font-size: 17px;
+    width: 80%;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    margin: 0.8rem 0;
+    color: $color-secondary;
 }
 
-input[type='text']::placeholder,
-input[type='email']::placeholder {
-    color: $color-secondary;
+::placeholder {
+    color: $color-primary;
     opacity: 50%;
+    padding-left: 20px;
 }
