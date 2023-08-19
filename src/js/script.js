@@ -22,19 +22,14 @@ const afficherEmail = (nom, email, score) => {
 /* regexp */
 const validerNom = (nom) => {
 	if (nom.length < 2) {
-		console.log('Le nom est trop court');
-	} else {
-		console.log('nom valide');
+		throw new Error('Le nom est trop court');
 	}
 };
+
 const validerEmail = (email) => {
-	let emailRegExp = new RegExp(
-		'^[a-z0-9][-a-z0-9._]+@([-a-z0-9]+.)+[.]{1}[a-z]{2,3}$'
-	);
+	let emailRegExp = new RegExp('[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+');
 	if (!emailRegExp.test(email)) {
-		console.log("L'email n'est pas valide");
-	} else {
-		console.log('email valide');
+		throw new Error("L'email n'est pas valide");
 	}
 };
 
@@ -47,10 +42,10 @@ const validerEmail = (email) => {
 const afficherMessageErreur = (message) => {
 	let spanErreurMessage = document.getElementById('erreurMessage');
 
-	if (!spanErreurMessage) {
+	if (!spanErreurMessage) { // si spanErreurMessage n'existe pas
 		let popup = document.querySelector('.popup');
 		spanErreurMessage = document.createElement('span');
-		spanErreurMessage.id = 'erreurMessage';
+		spanErreurMessage.id = 'erreurMessage'; // donne un id
 
 		popup.append(spanErreurMessage);
 	}
@@ -64,6 +59,7 @@ const afficherMessageErreur = (message) => {
  *
  */
 const gererFormulaire = (scoreEmail) => {
+	// "try" pour essayer d'éxécuter le code." catch" en cas d'erreur :
 	try {
 		let baliseNom = document.getElementById('nom');
 		let nom = baliseNom.value;
@@ -72,9 +68,11 @@ const gererFormulaire = (scoreEmail) => {
 		let baliseEmail = document.getElementById('email');
 		let email = baliseEmail.value;
 		validerEmail(email);
-		afficherMessageErreur('');
+
+		afficherMessageErreur(''); // tout est ok, pas de message d'erreur
 		afficherEmail(nom, email, scoreEmail);
-	} catch (erreur) {
+	} catch (erreur) { // erreur de throw
+		// gérer l'erreur
 		afficherMessageErreur(erreur.message);
 	}
 };
