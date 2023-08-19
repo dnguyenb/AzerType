@@ -46,7 +46,6 @@ main {
 .zoneSaisie {
     @include flex;
     width: 100%;
-    margin-bottom: 1rem;
 
     @media screen and (min-width: 768px) {
         @include flex(row, space-between);

@@ -7,12 +7,87 @@ const afficherResultat = (score, nombreMotsProposes) => {
 	spanScore.innerText = affichageScore;
 };
 
+/* fonction pour afficher le mot ou phrase à écrire : */
 const afficherProposition = (proposition) => {
 	let zoneProposition = document.querySelector('.zoneProposition');
 	zoneProposition.innerText = proposition;
 };
 
+/* fonction pour afficher l'email : */
+const afficherEmail = (nom, email, score) => {
+	let mailto = `mailto:${email}?subject=Partage du score Azertype&body=Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site d'Azertype !`;
+	location.href = mailto;
+};
+
+/* regexp */
+const validerNom = (nom) => {
+	if (nom.length < 2) {
+		console.log('Le nom est trop court');
+	} else {
+		console.log('nom valide');
+	}
+};
+const validerEmail = (email) => {
+	let emailRegExp = new RegExp(
+		'^[a-z0-9][-a-z0-9._]+@([-a-z0-9]+.)+[.]{1}[a-z]{2,3}$'
+	);
+	if (!emailRegExp.test(email)) {
+		console.log("L'email n'est pas valide");
+	} else {
+		console.log('email valide');
+	}
+};
+
+/**
+ * Cette fonction affiche le message d'erreur passé en paramètre.
+ * Si le span existe déjà, alors il est réutilisé pour ne pas multiplier
+ * les messages d'erreurs.
+ *
+ */
+const afficherMessageErreur = (message) => {
+	let spanErreurMessage = document.getElementById('erreurMessage');
+
+	if (!spanErreurMessage) {
+		let popup = document.querySelector('.popup');
+		spanErreurMessage = document.createElement('span');
+		spanErreurMessage.id = 'erreurMessage';
+
+		popup.append(spanErreurMessage);
+	}
+
+	spanErreurMessage.innerText = message;
+};
+
+/**
+ * Cette fonction permet de récupérer les informations dans le formulaire
+ * de la popup de partage et d'appeler l'affichage de l'email avec les bons paramètres.
+ *
+ */
+const gererFormulaire = (scoreEmail) => {
+	try {
+		let baliseNom = document.getElementById('nom');
+		let nom = baliseNom.value;
+		validerNom(nom);
+
+		let baliseEmail = document.getElementById('email');
+		let email = baliseEmail.value;
+		validerEmail(email);
+		afficherMessageErreur('');
+		afficherEmail(nom, email, scoreEmail);
+	} catch (erreur) {
+		afficherMessageErreur(erreur.message);
+	}
+};
+
+/*
+ ****************************************
+ *
+ * fonction principale pour lancer le jeu
+ *
+ ****************************************
+ */
 const lancerJeu = () => {
+	initAddEventListenerPopup();
 	// déclaration des variables 'score' et 'nombreMotsProposes initialisées à 0 :
 	let score = 0;
 	let i = 0; // i est le compteur de mots proposés.
@@ -25,7 +100,6 @@ const lancerJeu = () => {
 
 	// au click, récupère le mot tapé par l'utilisateur :
 	btnValiderMot.addEventListener('click', () => {
-		console.log(inputEcriture.value);
 		if (inputEcriture.value === listeProposition[i]) {
 			score++;
 		}
@@ -45,17 +119,28 @@ const lancerJeu = () => {
 	// Gestion de l'évènement 'change' sur les boutons radio :
 	let listeBtnRadio = document.querySelectorAll('input[name="optionSource"]');
 
-	for (let i = 0; i < listeBtnRadio.length; i++) {
-		listeBtnRadio[i].addEventListener('change', () => {
-			if (listeBtnRadio[i].value === 'mots') {
+	for (let index = 0; index < listeBtnRadio.length; index++) {
+		listeBtnRadio[index].addEventListener('change', (event) => {
+			if (event.target.value === '1') {
 				listeProposition = listeMots;
 			} else {
 				listeProposition = listePhrases;
 			}
+
 			// Modifie l'affichage :
 			afficherProposition(listeProposition[i]);
-			console.log(listeBtnRadio[i].value);
 		});
 	}
+
+	/* gestion de l'évènement "submit" du formulaire de partage */
+
+	let form = document.querySelector('form');
+
+	form.addEventListener('submit', (event) => {
+		event.preventDefault();
+		let scoreEmail = `${score} / ${i}`;
+		gererFormulaire(scoreEmail);
+	});
+
 	afficherResultat(score, i);
 };
